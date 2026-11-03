@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdfjin-pdf-to-powerpoint"
+version = "0.1.0"
+authors = [
+  { name="PDFJin Team", email="support@pdfjin.com" },
+]
+description = "Convert PDF presentations into editable PowerPoint slides (PPTX) by PDFJin"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["pdf", "pdfjin", "cli", "pdf-tools", "document-processing", "ai"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Printing",
+    "Topic :: Utilities",
+]
+dependencies = ["pdf2image>=1.16.0", "python-pptx>=0.6.21", "Pillow>=9.0.0"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://pdfjin.com"
+"Online Tool" = "https://pdfjin.com/pages/pdf-to-powerpoint.html"
+"Source" = "https://github.com/pdfjin/pdfjin-pdf-to-powerpoint"
+"Bug Tracker" = "https://github.com/pdfjin/pdfjin-pdf-to-powerpoint/issues"
+
+[project.scripts]
+pdfjin-pdf-to-powerpoint = "pdfjin_pdf_to_powerpoint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdfjin_pdf_to_powerpoint*"]
